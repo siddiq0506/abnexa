@@ -6,7 +6,7 @@ const FounderProfile = () => {
     <section id="about" className="py-16 md:py-24 animate-fade-in-up scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 text-gray-900">
-            The Founder
+            The Founderrrrrrrrrr
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
