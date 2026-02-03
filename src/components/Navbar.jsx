@@ -18,6 +18,7 @@ const Navbar = () => {
   const bgClasses = "bg-white/90 backdrop-blur-xl"; // Increased opacity for better readability
 
   return (
+    <>
     <header className={`${bgClasses} ${glassClasses} transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-0 md:h-24"> {/* Increased height, removed fixed h-20 constraint */}
@@ -69,15 +70,16 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+    </header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-51 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 pb-10 items-center space-y-6 overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {navItems.map((item) => (
           <a
             key={item.name}
             href={item.href}
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-semibold text-gray-800 hover:text-accent transition duration-300"
+            className="text-2xl font-semibold text-gray-800 hover:text-accent transition duration-300 py-2 px-4 rounded-lg hover:bg-gray-50"
           >
             {item.name}
           </a>
@@ -88,7 +90,7 @@ const Navbar = () => {
           </button>
         </a>
       </div>
-    </header>
+    </>
   );
 };
 
