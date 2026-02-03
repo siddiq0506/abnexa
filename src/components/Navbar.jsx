@@ -28,7 +28,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="Abnexa Technologies" 
-              className="h-12 sm:h-16 md:h-24 w-auto object-contain transition-all duration-300" 
+              className="h-24 sm:h-32 md:h-48 w-auto object-contain transition-all duration-300"
             />
           </a>
 
