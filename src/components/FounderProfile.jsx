@@ -1,4 +1,5 @@
 import React from 'react';
+import founderImage from '../assets/IMG_6714.jpg';
 
 const FounderProfile = () => {
   return (
@@ -18,7 +19,7 @@ const FounderProfile = () => {
                 
                 <div className="relative glass rounded-2xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.02]">
                     <img 
-                      src="/Assets/IMG_6714.jpg" // Corrected image path based on file structure
+                      src={founderImage}
                       alt="Abubakr Siddiq - Founder of Abnexa Technologies" 
                       className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500"
                     />
