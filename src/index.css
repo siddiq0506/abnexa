@@ -13,6 +13,7 @@ body {
   color: #1f2937; /* gray-800 for text */
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
 
 /* Explicit light mode utility, in case we switch using a button or class */
@@ -21,14 +22,15 @@ body {
   color: #1f2937;
 }
 
-/* Ensure smooth transitions for micro-animations */
-* {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Base glassmorphism style helper */
 .glass {
   background-color: rgba(255, 255, 255, 0.7); /* white with transparency */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   border: 1px solid rgba(229, 231, 235, 0.5); /* gray-200 border */
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }

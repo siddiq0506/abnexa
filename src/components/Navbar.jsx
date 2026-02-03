@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/LOGO-removebg-preview.png';
 
 // Placeholder navigation structure - in a real app, we'd use react-router
@@ -6,53 +6,87 @@ const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'Services', href: '#services' },
   { name: 'Products', href: '#products' },
-  { name: 'About', href: '#about' }, // Added "About" link
+  { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   
   // Glassmorphism styling applied to the navbar container
   const glassClasses = "glass sticky top-0 z-50 shadow-sm border-b border-gray-200";
-  const bgClasses = "bg-white/80 backdrop-blur-lg"; // Ensure backdrop-blur is applied
+  const bgClasses = "bg-white/90 backdrop-blur-xl"; // Increased opacity for better readability
 
   return (
-    <header className={`${bgClasses} ${glassClasses}`}>
+    <header className={`${bgClasses} ${glassClasses} transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center py-4 md:py-0 md:h-24"> {/* Increased height, removed fixed h-20 constraint */}
+          
           {/* Logo/Brand */}
-          <a href="#home" className="flex items-center animate-fade-in-up">
+          <a href="#home" className="flex items-center animate-fade-in-up z-50 relative">
             <img 
               src={logo} 
               alt="Abnexa Technologies" 
-              className="h-40 w-auto object-contain" 
+              className="h-12 sm:h-16 md:h-24 w-auto object-contain transition-all duration-300" 
             />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-lg font-medium hover:text-accent transition duration-300 ease-in-out 
-                            ${item.name === 'Home' ? 'text-gray-900' : 'text-gray-600'}`} // Highlight Home initially
+                className={`text-base lg:text-lg font-medium hover:text-accent transition duration-300 ease-in-out 
+                            ${item.name === 'Home' ? 'text-gray-900' : 'text-gray-600'}`}
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
-          {/* Right Side: CTA & Theme Toggle */}
+          {/* Right Side: CTA & Mobile Toggle */}
           <div className="flex items-center space-x-4">
-            {/* Secondary CTA placeholder on Nav */}
+            {/* CTA Button - Hidden on very small screens if needed, or kept */}
             <a href="#contact" className="hidden sm:inline-block">
-              <button className="text-sm font-medium px-4 py-2 rounded-full border border-accent text-accent hover:bg-accent/10 transition duration-300">
+              <button className="text-sm font-medium px-5 py-2.5 rounded-full border border-accent text-accent hover:bg-accent hover:text-white transition duration-300 shadow-sm">
                 View Services
               </button>
             </a>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-gray-700 hover:text-accent focus:outline-none p-2 rounded-md transition-colors z-50 relative"
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1.5">
+                <span className={`block w-6 h-0.5 bg-current transform transition duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-current transition duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-current transform transition duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              </div>
+            </button>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            onClick={() => setIsOpen(false)}
+            className="text-2xl font-semibold text-gray-800 hover:text-accent transition duration-300"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a href="#contact" onClick={() => setIsOpen(false)} className="mt-4">
+          <button className="text-lg font-medium px-8 py-3 rounded-full bg-accent text-white shadow-lg hover:bg-accent/90 transition duration-300">
+            Book Consultation
+          </button>
+        </a>
       </div>
     </header>
   );

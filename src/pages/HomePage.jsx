@@ -46,38 +46,38 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="space-y-24 pb-16">
+    <div className="space-y-16 md:space-y-24 pb-16">
 
       {/* 1. Hero Section */}
-      <section id="hero" className="pt-24 pb-16 md:pt-36 md:pb-24 text-center relative overflow-hidden">
+      <section id="hero" className="pt-32 pb-12 md:pt-40 md:pb-24 text-center relative overflow-hidden">
         {/* Futuristic Abstract Visual Placeholder - Subtle background effect */}
-        <div className="absolute inset-0 opacity-20">
-            <div className="w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-subtle-float absolute top-[-10%] left-[-10%]"></div>
-            <div className="w-72 h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-subtle-float animation-delay-1000 absolute bottom-[-10%] right-[-10%]"></div>
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+            <div className="w-64 h-64 md:w-96 md:h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-subtle-float absolute top-[-10%] left-[-10%]"></div>
+            <div className="w-64 h-64 md:w-72 md:h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-subtle-float animation-delay-1000 absolute bottom-[-10%] right-[-10%]"></div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 relative z-10 leading-tight text-gray-900">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 relative z-10 leading-tight text-gray-900 px-4">
           We Build Scalable Software, <br className='hidden sm:inline'/> SaaS & AI Powered Products
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 relative z-10 animate-fade-in-up animation-delay-500">
+        <p className="text-lg sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 relative z-10 animate-fade-in-up animation-delay-500 px-6">
           Your end to end digital solutions partner, transforming complex challenges into high conversion, high performance software.
         </p>
-        <div className="flex justify-center space-x-4 relative z-10 animate-fade-in-up animation-delay-1000">
-          <a href={CTA_CONSULTATION_LINK}>
-            <CTAButton primary={true}>Book a Free Consultation</CTAButton>
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 relative z-10 animate-fade-in-up animation-delay-1000 px-6">
+          <a href={CTA_CONSULTATION_LINK} className="w-full sm:w-auto">
+            <CTAButton primary={true} className="w-full sm:w-auto justify-center">Book a Free Consultation</CTAButton>
           </a>
-          <a href={CTA_SERVICES_LINK}>
-            <CTAButton primary={false}>View Our Services</CTAButton>
+          <a href={CTA_SERVICES_LINK} className="w-full sm:w-auto">
+            <CTAButton primary={false} className="w-full sm:w-auto justify-center">View Our Services</CTAButton>
           </a>
         </div>
       </section>
 
       {/* 2. Services Overview Section */}
-      <section id="services-summary" className="pt-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-gray-900">
+      <section id="services-summary" className="pt-12 px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 text-gray-900">
             Our Digital Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {servicesSummary.map((service, index) => (
             <ServiceCardPlaceholder 
               key={index} 
@@ -93,13 +93,13 @@ const HomePage = () => {
       <FounderProfile />
 
       {/* 4. Why Choose Us Section */}
-      <section id="why-us" className="pt-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-14 text-gray-900">
+      <section id="why-us" className="pt-12 px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-14 text-gray-900">
             Why Choose Abnexa Technologies?
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
           {whyChooseUsPoints.map((point, index) => (
-            <div key={index} className="flex items-start space-x-4 group">
+            <div key={index} className="flex items-start space-x-4 group p-4 rounded-lg hover:bg-gray-50 transition duration-300">
                 <div className="p-3 mt-1 rounded-full bg-accent/10 group-hover:bg-accent/20 transition duration-300 flex-shrink-0">
                     <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 </div>
@@ -113,8 +113,8 @@ const HomePage = () => {
       </section>
 
       {/* 5. Process Section */}
-      <section id="process" className="pt-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-gray-900">
+      <section id="process" className="pt-12 px-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 text-gray-900">
             Our Seamless Development Process
         </h2>
         
@@ -123,11 +123,15 @@ const HomePage = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden sm:block"></div>
             
             {processSteps.map((step, index) => (
-                <div key={index} className={`flex items-center w-full mb-10 sm:mb-16 ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}>
+                <div key={index} className={`flex flex-col sm:flex-row items-center w-full mb-10 sm:mb-16 ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}>
                     
                     {/* Content Card */}
-                    <div className={`w-full sm:w-1/2 p-6 glass rounded-xl shadow-xl ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'}`}>
-                        <h3 className="text-2xl font-bold text-accent mb-2">{step.name}</h3>
+                    <div className={`w-full sm:w-1/2 p-6 glass rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'} mb-6 sm:mb-0`}>
+                        <div className="flex items-center mb-3 sm:hidden">
+                            <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold mr-3">{index + 1}</span>
+                            <h3 className="text-2xl font-bold text-accent">{step.name}</h3>
+                        </div>
+                        <h3 className="text-2xl font-bold text-accent mb-2 hidden sm:block">{step.name}</h3>
                         <p className="text-gray-600">{step.description}</p>
                     </div>
 

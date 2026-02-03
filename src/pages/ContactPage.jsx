@@ -56,8 +56,8 @@ const ContactPage = () => {
     <div className="py-16 max-w-6xl mx-auto space-y-20">
       
       {/* CTA Headline */}
-      <header className="text-center">
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
+      <header className="text-center px-4">
+        <h1 className="text-3xl sm:text-5xl sm:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
           Let’s Build Something Powerful
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">

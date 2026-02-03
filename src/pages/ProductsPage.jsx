@@ -59,8 +59,8 @@ const ProductsPage = () => {
   return (
     <div className="space-y-20 pt-10 pb-16">
       {/* Page Header */}
-      <header className="text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+      <header className="text-center max-w-4xl mx-auto px-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
           Products
         </h1>
         <p className="text-lg text-gray-600">

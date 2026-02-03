@@ -55,10 +55,10 @@ const ServicesPage = () => {
     return (
         <div className="space-y-24 pt-8 pb-16">
             <header className="text-center max-w-4xl mx-auto">
-                <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
                     Complete Digital Solutions Portfolio
                 </h1>
-                <p className="text-xl text-gray-600">
+                <p className="text-lg sm:text-xl text-gray-600">
                     We deliver technology solutions that solve complex problems and drive measurable business outcomes across every layer of the digital stack.
                 </p>
                 <div className='mt-8'>
@@ -100,7 +100,11 @@ const ServicesPage = () => {
                             
                             {/* Content Card */}
                             <div className={`w-full sm:w-1/2 p-6 glass rounded-xl shadow-lg transition duration-500 ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'}`}>
-                                <h3 className="text-2xl font-bold text-accent mb-2">{step.name}</h3>
+                                <div className="flex items-center mb-2 sm:hidden">
+                                    <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold mr-3 text-sm shrink-0">{index + 1}</span>
+                                    <h3 className="text-xl font-bold text-accent">{step.name}</h3>
+                                </div>
+                                <h3 className="hidden sm:block text-2xl font-bold text-accent mb-2">{step.name}</h3>
                                 <p className="text-gray-600">{step.description}</p>
                             </div>
 

@@ -2,13 +2,13 @@ import React from 'react';
 
 const FounderProfile = () => {
   return (
-    <section id="about" className="py-24 animate-fade-in-up">
+    <section id="about" className="py-16 md:py-24 animate-fade-in-up">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-gray-900">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 text-gray-900">
             The Founder
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           
           {/* Left Side: Founder Photo */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-1">
@@ -30,9 +30,9 @@ const FounderProfile = () => {
 
           {/* Right Side: Text Content */}
           <div className="order-2 lg:order-2 space-y-6">
-            <h3 className="text-3xl font-bold text-accent">Abubakr Siddiq</h3>
-            <p className="text-xl font-medium text-gray-700 italic">Founder – Abnexa Technologies</p>
-            <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-accent">Abubakr Siddiq</h3>
+            <p className="text-lg md:text-xl font-medium text-gray-700 italic">Founder – Abnexa Technologies</p>
+            <div className="space-y-4 text-gray-600 leading-relaxed text-base md:text-lg">
                 <p>
                     Abubakr Siddiq is a tech driven businessman who specialises in creating SaaS platforms, scalable software, and digital solutions driven by AI. He collaborates closely with clients to turn concepts into dependable, high performing products because he is passionate about fusing engineering and business strategy.
                 </p>
@@ -44,11 +44,11 @@ const FounderProfile = () => {
             {/* Professional touches */}
             <div className="pt-6 border-t border-gray-200 flex space-x-6">
                 <div className="flex flex-col">
-                    <span className="text-accent font-bold text-2xl">Focus</span>
+                    <span className="text-accent font-bold text-xl md:text-2xl">Focus</span>
                     <span className="text-gray-600 text-sm tracking-wider">Engineering & Strategy</span>
                 </div>
                 <div className="flex flex-col">
-                    <span className="text-accent font-bold text-2xl">Vision</span>
+                    <span className="text-accent font-bold text-xl md:text-2xl">Vision</span>
                     <span className="text-gray-600 text-sm tracking-wider">Scalable AI Products</span>
                 </div>
             </div>
