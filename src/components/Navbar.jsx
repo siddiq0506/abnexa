@@ -73,7 +73,7 @@ const Navbar = () => {
     </header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-51 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 pb-10 items-center space-y-6 overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 pb-10 items-center space-y-6 overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {navItems.map((item) => (
           <a
             key={item.name}
