@@ -10,7 +10,7 @@ const StartupIcon = (props) => <svg {...props} fill="none" stroke="currentColor"
 
 
 const ServiceCard = ({ title, description, icon: Icon }) => (
-    <div className="p-8 glass rounded-2xl shadow-xl border border-gray-200 flex flex-col h-full transition duration-300 hover:shadow-2xl hover:border-accent/60 group">
+    <div className="p-6 md:p-8 glass rounded-2xl shadow-xl border border-gray-200 flex flex-col h-full transition duration-300 hover:shadow-2xl hover:border-accent/60 group">
         <div className="p-4 bg-accent/10 rounded-lg inline-flex self-start mb-4 transition duration-300 group-hover:bg-accent/20">
             <Icon className="w-8 h-8 text-accent" />
         </div>
@@ -55,7 +55,7 @@ const ServicesPage = () => {
     return (
         <div className="space-y-24 pt-8 pb-16">
             <header className="text-center max-w-4xl mx-auto">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+                <h1 className="text-[clamp(2rem,5vw+1rem,4rem)] font-bold mb-4 text-gray-900">
                     Complete Digital Solutions Portfolio
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600">
@@ -70,7 +70,7 @@ const ServicesPage = () => {
 
             {/* Services Section */}
             <section id="services-cards">
-                <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Our Core Services</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-900">Our Core Services</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {servicesData.map((service, index) => (
                         <ServiceCard 
@@ -90,7 +90,7 @@ const ServicesPage = () => {
 
             {/* Process Section */}
             <section id="service-process">
-                <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Our Development Blueprint</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-900">Our Development Blueprint</h2>
                 <div className="relative max-w-6xl mx-auto">
                     {/* Timeline line (Visual enhancement) */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 h-[98%] w-0.5 bg-gray-300 hidden sm:block"></div>
@@ -99,7 +99,7 @@ const ServicesPage = () => {
                         <div key={index} className={`flex items-center w-full mb-10 sm:mb-16 ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}>
                             
                             {/* Content Card */}
-                            <div className={`w-full sm:w-1/2 p-6 glass rounded-xl shadow-lg transition duration-500 ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'}`}>
+                            <div className={`w-full sm:w-1/2 p-6 md:p-8 glass rounded-xl shadow-lg transition duration-500 ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'}`}>
                                 <div className="flex items-center mb-2 sm:hidden">
                                     <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold mr-3 text-sm shrink-0">{index + 1}</span>
                                     <h3 className="text-xl font-bold text-accent">{step.name}</h3>
@@ -128,7 +128,7 @@ const ServicesPage = () => {
 
             {/* Benefits Section */}
             <section id="benefits" className="pt-12">
-                <h2 className="text-4xl font-bold text-center mb-10 text-gray-900">The Abnexa Advantage</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 text-gray-900">The Abnexa Advantage</h2>
                 <ul className="space-y-4 max-w-3xl mx-auto">
                     {benefits.map((benefit, index) => (
                         <ServiceBenefit key={index} text={benefit} />

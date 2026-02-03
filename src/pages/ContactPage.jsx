@@ -57,7 +57,7 @@ const ContactPage = () => {
       
       {/* CTA Headline */}
       <header className="text-center px-4">
-        <h1 className="text-3xl sm:text-5xl sm:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
+        <h1 className="text-[clamp(2rem,5vw+1rem,4.5rem)] font-extrabold text-gray-900 mb-4 tracking-tight">
           Let’s Build Something Powerful
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -68,7 +68,7 @@ const ContactPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Contact Form */}
-        <div className="p-8 lg:p-10 glass rounded-3xl shadow-2xl border-t-4 border-accent">
+        <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border-t-4 border-accent">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Project Intake Form</h2>
             <form onSubmit={handleSubmit}>
                 <InputField label="Full Name" name="name" />
@@ -85,7 +85,7 @@ const ContactPage = () => {
 
         {/* Contact Information & Trust Block */}
         <div className="flex flex-col space-y-8">
-            <div className="p-8 lg:p-10 glass rounded-3xl shadow-xl border-l-4 border-accent flex flex-col h-full">
+            <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-xl border-l-4 border-accent flex flex-col h-full">
                 <h3 className="text-3xl font-bold text-gray-900 mb-10">
                     Get in Touch
                 </h3>

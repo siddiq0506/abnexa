@@ -60,7 +60,7 @@ const ProductsPage = () => {
     <div className="space-y-20 pt-10 pb-16">
       {/* Page Header */}
       <header className="text-center max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+        <h1 className="text-[clamp(2rem,5vw+1rem,4rem)] font-bold mb-4 text-gray-900">
           Products
         </h1>
         <p className="text-lg text-gray-600">
@@ -72,7 +72,7 @@ const ProductsPage = () => {
       <section className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Left: Product Overview */}
-          <div className="p-8 lg:p-10 glass rounded-3xl shadow-2xl border border-gray-200">
+          <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border border-gray-200">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">ConstructOS</h2>
               <Badge>Coming Soon</Badge>

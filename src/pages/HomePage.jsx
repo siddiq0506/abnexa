@@ -104,8 +104,7 @@ const HomePage = () => {
                     <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <div>
-                    <h4 className="text-xl font-semibold mb-1 text-gray-900">{point.split(':')[0]}</h4>
-                    <p className="text-gray-600">{point.split(': ')[1] || point}</p>
+                    <h4 className="text-xl font-semibold mb-1 text-gray-900">{point}</h4>
                 </div>
             </div>
           ))}
