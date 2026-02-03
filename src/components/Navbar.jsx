@@ -74,6 +74,18 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 pb-10 items-center space-y-6 overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        {/* Close button inside overlay */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-8 right-8 text-gray-700 hover:text-accent focus:outline-none p-2"
+          aria-label="Close menu"
+        >
+          <div className="w-8 h-8 flex flex-col justify-center items-center">
+            <span className="block w-8 h-0.5 bg-current rotate-45 translate-y-[1px]"></span>
+            <span className="block w-8 h-0.5 bg-current -rotate-45 -translate-y-[1px]"></span>
+          </div>
+        </button>
+
         {navItems.map((item) => (
           <a
             key={item.name}
