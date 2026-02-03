@@ -70,10 +70,16 @@ const ContactPage = () => {
         {/* Contact Form */}
         <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border-t-4 border-accent">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Project Intake Form</h2>
-            <form onSubmit={handleSubmit}>
-                <InputField label="Full Name" name="name" />
-                <InputField label="Work Email" name="email" type="email" />
-                <InputField label="Project Idea / Scope Summary" name="projectIdea" isTextarea={true} />
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                    <label>
+                        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                    </label>
+                </p>
+                <InputField key="name" label="Full Name" name="name" />
+                <InputField key="email" label="Work Email" name="email" type="email" />
+                <InputField key="projectIdea" label="Project Idea / Scope Summary" name="projectIdea" isTextarea={true} />
                 
                 <div className="mt-8 flex justify-end">
                     <CTAButton primary={true} type="submit">
