@@ -49,7 +49,7 @@ const HomePage = () => {
     <div className="space-y-16 md:space-y-24 pb-16">
 
       {/* 1. Hero Section */}
-      <section id="hero" className="pt-16 pb-12 md:pt-24 md:pb-24 text-center relative overflow-hidden">
+      <section id="hero" className="pt-8 pb-12 md:pt-16 md:pb-24 text-center relative overflow-hidden">
         {/* Futuristic Abstract Visual Placeholder - Subtle background effect */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="w-64 h-64 md:w-96 md:h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-subtle-float absolute top-[-10%] left-[-10%]"></div>
