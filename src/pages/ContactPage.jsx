@@ -93,6 +93,7 @@ const ContactPage = () => {
               name="contact"
               method="POST"
               data-netlify="true"
+              netlify
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
             >
