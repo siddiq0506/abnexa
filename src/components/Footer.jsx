@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8 md:mt-0 w-full md:w-auto">
             <a href="#contact" className="w-full sm:w-auto">
                 <CTAButton primary={true} className="text-base w-full sm:w-auto justify-center">
-                    Book a Free Consultation
+                    Book a Live Demo
                 </CTAButton>
             </a>
             <a href="#services" className="w-full sm:w-auto">

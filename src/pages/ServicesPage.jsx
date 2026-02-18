@@ -2,11 +2,10 @@ import React from 'react';
 import CTAButton from '../components/CTAButton';
 
 // Icons for Services Page (Reusing previous ones where possible)
-const WebDevIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>; // Reusing a generic/layout icon placeholder for now
-const CloudIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-2.006M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>;
-const AiIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
-const CustomIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253" /></svg>;
-const StartupIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8L10 14m5-7l-7 7" /></svg>;
+const ErpIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v6H4zM4 14h10v6H4zM16 14h4v6h-4z" /></svg>;
+const CrmIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7a4 4 0 118 0 4 4 0 01-8 0zm-3 13a6 6 0 1112 0H5zM18 14l3 3m0 0l3-3m-3 3v4" /></svg>;
+const AutomationIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3h6v4H9zM5 10h6v4H5zM13 17h6v4h-6zM16 7l-2 3m-4 4-2 3" /></svg>;
+const ConstructionIcon = (props) => <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M4 10l7-7 3 3 6 6M5 19v-6l6-6 2 2 6 6v4" /></svg>;
 
 
 const ServiceCard = ({ title, description, icon: Icon }) => (
@@ -28,12 +27,26 @@ const ServiceBenefit = ({ text }) => (
 
 const ServicesPage = () => {
     const servicesData = [
-        { title: "Website Design & Development", description: "Bespoke landing pages, corporate sites, and complex internal web applications. Focus on modern standards and conversion rate optimization (CRO)." },
-        { title: "SaaS Product Development", description: "Full lifecycle support: From initial MVP feature set to architecting scalable, multi tenant production applications ready for rapid growth." },
-        { title: "AI Powered App Development", description: "Harnessing Machine Learning, custom LLMs, intelligent chatbots, and predictive analytics to automate processes and unlock new value." },
-        { title: "Custom Software Solutions", description: "Tailored software built from the ground up for startups and established businesses needing unique operational advantages." },
-        { title: "API Integrations & Dashboards", description: "Building robust backend infrastructure, secure REST/GraphQL APIs, and insightful admin panels/dashboards for operational clarity." },
-        { title: "Ongoing Maintenance & Scaling", description: "Proactive support, performance monitoring, security patching, and infrastructure scaling to meet evolving demand." },
+        { 
+            title: "Custom ERP Systems", 
+            description: "End to end ERP platforms for construction and project driven businesses — covering finance, BOQ, procurement, inventory, HR, billing and executive reporting.", 
+            icon: ErpIcon 
+        },
+        { 
+            title: "High Performance CRM", 
+            description: "CRM systems that track enquiries, proposals, collections and client relationships with zero leakage across your sales and collections funnels.", 
+            icon: CrmIcon 
+        },
+        { 
+            title: "Industry Specific Automation", 
+            description: "Automation of core workflows such as site reporting, approvals, checklists and compliance — designed around your reality, not generic templates.", 
+            icon: AutomationIcon 
+        },
+        { 
+            title: "Construction Tech Solutions", 
+            description: "Jobsite monitoring, BOQ vs executed tracking, contractor performance visibility, and board ready dashboards for owners and leadership.", 
+            icon: ConstructionIcon 
+        },
     ];
 
     const processSteps = [
@@ -45,21 +58,21 @@ const ServicesPage = () => {
     ];
 
     const benefits = [
-        "Blazing Fast Load Speeds",
-        "Scalability baked into the architecture",
-        "Enterprise grade Security posture",
-        "Maintainable, Clean Code Standards",
-        "Maximum ROI through UX focus"
+        "Systems designed around profit protection and execution control.",
+        "Architecture built to handle multi site, multi project realities.",
+        "Operational visibility for owners, finance and project heads.",
+        "Tight integration between ERP, CRM and on site reality.",
+        "Implementation support that stays with you beyond go live.",
     ];
 
     return (
         <div className="space-y-24 pt-8 pb-16">
             <header className="text-center max-w-4xl mx-auto">
                 <h1 className="text-[clamp(2rem,5vw+1rem,4rem)] font-bold mb-4 text-gray-900">
-                    Complete Digital Solutions Portfolio
+                    Solutions for Serious, Scale Focused Businesses
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600">
-                    We deliver technology solutions that solve complex problems and drive measurable business outcomes across every layer of the digital stack.
+                    We design and implement ERP, CRM and automation systems that give you control over every project, rupee and relationship.
                 </p>
                 <div className='mt-8'>
                     <a href="#contact">
@@ -70,19 +83,14 @@ const ServicesPage = () => {
 
             {/* Services Section */}
             <section id="services-cards">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-900">Our Core Services</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-900">Our Core Solutions</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {servicesData.map((service, index) => (
                         <ServiceCard 
                             key={index}
                             title={service.title}
                             description={service.description}
-                            icon={
-                                index === 0 ? WebDevIcon : 
-                                index === 1 ? CloudIcon : 
-                                index === 2 ? AiIcon : 
-                                index === 3 ? CustomIcon : StartupIcon
-                            }
+                            icon={service.icon}
                         />
                     ))}
                 </div>

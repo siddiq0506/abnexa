@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import logo from '../assets/LOGO-removebg-preview.png';
 
-// Placeholder navigation structure - in a real app, we'd use react-router
+// Navigation aligned with ConstructOS-first positioning
 const navItems = [
   { name: 'Home', href: '#home' },
-  { name: 'Services', href: '#services' },
-  { name: 'Products', href: '#products' },
-  { name: 'About', href: '#about' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Solutions', href: '#services' },      // maps to ServicesPage
+  { name: 'ConstructOS', href: '#products' },    // maps to ProductsPage
+  { name: 'About Us', href: '#about' },          // home anchor
+  { name: 'Contact', href: '#contact' },         // ContactPage
+  { name: 'Book Demo', href: '#contact' },     // go directly to intake form
 ];
 
 const Navbar = () => {
@@ -51,7 +52,7 @@ const Navbar = () => {
             {/* CTA Button - Hidden on very small screens if needed, or kept */}
             <a href="#contact" className="hidden sm:inline-block">
               <button className="text-sm font-medium px-5 py-2.5 rounded-full border border-accent text-accent hover:bg-accent hover:text-white transition duration-300 shadow-sm">
-                View Services
+                Book Demo
               </button>
             </a>
 
@@ -98,7 +99,7 @@ const Navbar = () => {
         ))}
         <a href="#contact" onClick={() => setIsOpen(false)} className="mt-4">
           <button className="text-lg font-medium px-8 py-3 rounded-full bg-accent text-white shadow-lg hover:bg-accent/90 transition duration-300">
-            Book Consultation
+            Book Demo
           </button>
         </a>
       </div>

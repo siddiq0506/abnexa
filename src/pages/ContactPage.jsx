@@ -1,56 +1,49 @@
 import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
 
+const InputField = ({ label, name, type = 'text', isTextarea = false, value, onChange }) => (
+  <div className="mb-6">
+    <label htmlFor={name} className="block text-sm font-medium mb-2 text-gray-900">
+      {label}
+    </label>
+    {isTextarea ? (
+      <textarea
+        id={name}
+        name={name}
+        rows="4"
+        value={value}
+        onChange={onChange}
+        required
+        className="w-full p-3 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 resize-none shadow-sm"
+        placeholder={`Describe your ${label.toLowerCase()}...`}
+      />
+    ) : (
+      <input
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+        required
+        className="w-full p-3 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 shadow-sm"
+        placeholder={`Enter your ${label.toLowerCase()}`}
+      />
+    )}
+  </div>
+);
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectIdea: '',
+    phone: '',
+    requirements: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-    // In a real app: Send data to backend/API
-    alert('Thank you for your inquiry! We will review your project idea shortly.');
-    setFormData({ name: '', email: '', projectIdea: '' });
-  };
-
-  const InputField = ({ label, name, type = 'text', isTextarea = false }) => (
-    <div className="mb-6">
-      <label htmlFor={name} className="block text-sm font-medium mb-2 text-gray-900">
-        {label}
-      </label>
-      {isTextarea ? (
-        <textarea
-          id={name}
-          name={name}
-          rows="4"
-          value={formData[name]}
-          onChange={handleChange}
-          required
-          className="w-full p-3 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 resize-none shadow-sm"
-          placeholder={`Describe your ${label.toLowerCase()}...`}
-        />
-      ) : (
-        <input
-          type={type}
-          id={name}
-          name={name}
-          value={formData[name]}
-          onChange={handleChange}
-          required
-          className="w-full p-3 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 shadow-sm"
-          placeholder={`Enter your ${label.toLowerCase()}`}
-        />
-      )}
-    </div>
-  );
 
   return (
     <div className="py-16 max-w-6xl mx-auto space-y-20">
@@ -61,7 +54,7 @@ const ContactPage = () => {
           Let’s Build Something Powerful
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Share your vision, and let our expert team structure the blueprint for your success.
+          Share your contact details and a brief about your requirements, and we will get back to you.
         </p>
       </header>
 
@@ -69,21 +62,50 @@ const ContactPage = () => {
         
         {/* Contact Form */}
         <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border-t-4 border-accent">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Project Intake Form</h2>
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Share Your Details</h2>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
                 <input type="hidden" name="form-name" value="contact" />
                 <p hidden>
                     <label>
-                        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                        Don’t fill this out: <input name="bot-field" />
                     </label>
                 </p>
-                <InputField key="name" label="Full Name" name="name" />
-                <InputField key="email" label="Work Email" name="email" type="email" />
-                <InputField key="projectIdea" label="Project Idea / Scope Summary" name="projectIdea" isTextarea={true} />
+                <InputField 
+                  label="Full Name" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                />
+                <InputField 
+                  label="Work Email" 
+                  name="email" 
+                  type="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                />
+                <InputField 
+                  label="Phone Number" 
+                  name="phone" 
+                  type="tel" 
+                  value={formData.phone} 
+                  onChange={handleChange} 
+                />
+                <InputField 
+                  label="Brief About Your Requirements" 
+                  name="requirements" 
+                  isTextarea={true} 
+                  value={formData.requirements} 
+                  onChange={handleChange} 
+                />
                 
                 <div className="mt-8 flex justify-end">
                     <CTAButton primary={true} type="submit">
-                        Submit Idea & Request Follow up
+                        Submit & Request a Call Back
                     </CTAButton>
                 </div>
             </form>

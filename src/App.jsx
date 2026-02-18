@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from './main'; // Importing context from main.jsx
+import React, { useState, useEffect, useRef } from 'react';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -21,6 +20,7 @@ const getPageFromHash = (hash) => {
 
 function App() {
   const [currentPage, setCurrentPage] = useState(getPageFromHash(window.location.hash));
+  const initialScrollHandled = useRef(false);
 
   // Effect to handle hash changes manually (since we don't have react-router)
   useEffect(() => {
@@ -41,6 +41,11 @@ function App() {
   // Effect to handle scrolling on page change
   useEffect(() => {
     const hash = window.location.hash;
+    if (!initialScrollHandled.current) {
+      window.scrollTo(0, 0);
+      initialScrollHandled.current = true;
+      return;
+    }
     // If no hash or generic page hash, scroll to top
     if (!hash || hash === '#home' || hash === '#services' || hash === '#products' || hash === '#contact') {
       window.scrollTo(0, 0);

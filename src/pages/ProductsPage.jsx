@@ -1,8 +1,7 @@
 import React from 'react';
 import CTAButton from '../components/CTAButton';
 //
-// Products page with a premium section for ConstructOS.
-// Dark, minimal, enterprise tone; avoids technical jargon and the word "ERP".
+// ConstructOS product page – deep dive into the flagship construction ERP.
 //
 
 const PillarCard = ({ title, description, icon: Icon }) => (
@@ -61,10 +60,10 @@ const ProductsPage = () => {
       {/* Page Header */}
       <header className="text-center max-w-4xl mx-auto px-4">
         <h1 className="text-[clamp(2rem,5vw+1rem,4rem)] font-bold mb-4 text-gray-900">
-          Products
+          ConstructOS — The Operating System for Profitable Contractors
         </h1>
         <p className="text-lg text-gray-600">
-          Purpose built software that elevates construction businesses with control, discipline, and profit clarity.
+          A construction focused ERP built to give owners ruthless visibility into cost, leakage and execution across every project.
         </p>
       </header>
 
@@ -75,28 +74,23 @@ const ProductsPage = () => {
           <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border border-gray-200">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">ConstructOS</h2>
-              <Badge>Coming Soon</Badge>
+              <Badge>Flagship Product</Badge>
             </div>
             <p className="text-xl text-gray-700 font-medium mb-6">
-              ConstructOS is an intelligent operating system built exclusively for contractors and construction companies to eliminate cost leakages, bring real time site control, and dramatically increase project profitability.
+              ConstructOS is an advanced ERP built exclusively for contractors and construction companies to eliminate cost leakages, bring real time site control, and dramatically increase project profitability.
             </p>
             <div className="space-y-4 text-gray-600">
               <p>
-                ConstructOS is not just another software or project management tool. It is a profit control and execution system designed for the realities of construction sites.
+                ConstructOS is not just another software or project management tool. It is a profit control and execution system designed for the chaos of real construction sites.
               </p>
               <p>
-                Built to bring discipline, transparency, and financial clarity, ConstructOS helps construction businesses move from reactive firefighting to controlled, data driven execution.
+                It brings discipline, transparency, and financial clarity so you move from reactive firefighting to controlled, data driven execution.
               </p>
             </div>
             <div className="mt-8">
-              <div className="inline-flex items-center space-x-3">
-                <CTAButton primary={false} className="cursor-default select-none">
-                  Launching Soon
-                </CTAButton>
-                <span className="text-sm text-gray-600">
-                  Early access available for select construction companies
-                </span>
-              </div>
+              <CTAButton primary={true}>
+                Book a Live Demo of ConstructOS
+              </CTAButton>
             </div>
           </div>
 
@@ -147,4 +141,3 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
-
