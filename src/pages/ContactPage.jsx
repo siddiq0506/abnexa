@@ -32,6 +32,11 @@ const InputField = ({ label, name, type = 'text', isTextarea = false, value, onC
   </div>
 );
 
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -42,7 +47,28 @@ const ContactPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...formData,
+      }),
+    })
+      .then(() => {
+        alert('Thank you for sharing your details. We will get back to you shortly.');
+        setFormData({ name: '', email: '', phone: '', requirements: '' });
+      })
+      .catch((error) => {
+        console.error('Form submission error:', error);
+        alert('There was a problem submitting the form. Please try again.');
+      });
   };
 
   return (
@@ -68,6 +94,7 @@ const ContactPage = () => {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
             >
                 <input type="hidden" name="form-name" value="contact" />
                 <p hidden>
