@@ -40,8 +40,7 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-gray-100 dark:border-gray-800 relative z-10">
-            <form name="contact" method="POST" data-netlify="true" action="/contact?success=true" className="space-y-6">
-              <input type="hidden" name="form-name" value="contact" />
+            <form action="/contact?success=true" className="space-y-6">
 
               <div className="grid grid-cols-2 gap-6">
                 <div>

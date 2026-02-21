@@ -24,15 +24,8 @@ export default function BookDemoPage() {
           {/* Form Card */}
           <div className="bg-white rounded-3xl shadow-xl shadow-blue-900/5 border border-gray-100 overflow-hidden">
             <div className="p-8 md:p-12">
-              <form 
-                name="book-demo-form" 
-                method="POST" 
-                data-netlify="true" 
-                action="/contact?success=true"
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="book-demo-form" />
-                
+              <form action="/contact?success=true" className="space-y-6">
+
                 <div className="grid grid-cols-1 gap-6">
                   {/* Name */}
                   <div>
@@ -105,13 +98,13 @@ export default function BookDemoPage() {
                 </div>
               </form>
             </div>
-            
+
             {/* Trust Footer */}
             <div className="bg-gray-50 px-8 py-6 border-t border-gray-100 flex items-center justify-center space-x-8 grayscale opacity-70">
-                <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Trusted by leading contractors</span>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Trusted by leading contractors</span>
             </div>
           </div>
-          
+
           <div className="mt-12 text-center">
             <p className="text-gray-500">
               Prefer to talk now? <Link href="/contact" className="text-blue-600 font-semibold hover:underline">Contact Sales</Link>
