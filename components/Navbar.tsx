@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link href="/" className="flex items-center transition-transform hover:scale-105">
               <div className="relative w-56 h-14 sm:w-72 sm:h-20">
                 <Image
-                  src="/logo copy.png"
+                  src="/logo.png"
                   alt="Abnexa Technologies Logo"
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
