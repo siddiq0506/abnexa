@@ -8,7 +8,7 @@ const navItems = [
   { name: 'ConstructOS', href: '#products' },    // maps to ProductsPage
   { name: 'About Us', href: '#about' },          // home anchor
   { name: 'Contact', href: '#contact' },         // ContactPage
-  { name: 'Book Demo', href: '#contact' },     // go directly to intake form
+  { name: 'Book Demo', href: '/book-demo' },     // go directly to intake form
 ];
 
 const Navbar = () => {
@@ -50,7 +50,7 @@ const Navbar = () => {
           {/* Right Side: CTA & Mobile Toggle */}
           <div className="flex items-center space-x-4">
             {/* CTA Button - Hidden on very small screens if needed, or kept */}
-            <a href="#contact" className="hidden sm:inline-block">
+            <a href="/book-demo" className="hidden sm:inline-block">
               <button className="text-sm font-medium px-5 py-2.5 rounded-full border border-accent text-accent hover:bg-accent hover:text-white transition duration-300 shadow-sm">
                 Book Demo
               </button>
@@ -97,7 +97,7 @@ const Navbar = () => {
             {item.name}
           </a>
         ))}
-        <a href="#contact" onClick={() => setIsOpen(false)} className="mt-4">
+        <a href="/book-demo" onClick={() => setIsOpen(false)} className="mt-4">
           <button className="text-lg font-medium px-8 py-3 rounded-full bg-accent text-white shadow-lg hover:bg-accent/90 transition duration-300">
             Book Demo
           </button>
