@@ -73,7 +73,7 @@ const ContactPage = () => {
 
   return (
     <div className="py-16 max-w-6xl mx-auto space-y-20">
-      
+
       {/* CTA Headline */}
       <header className="text-center px-4">
         <h1 className="text-[clamp(2rem,5vw+1rem,4.5rem)] font-extrabold text-gray-900 mb-4 tracking-tight">
@@ -85,105 +85,102 @@ const ContactPage = () => {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        
+
         {/* Contact Form */}
         <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-2xl border-t-4 border-accent">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Share Your Details</h2>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify
-              netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-            >
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
-                    <label>
-                        Don’t fill this out: <input name="bot-field" />
-                    </label>
-                </p>
-                <InputField 
-                  label="Full Name" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                />
-                <InputField 
-                  label="Work Email" 
-                  name="email" 
-                  type="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
-                />
-                <InputField 
-                  label="Phone Number" 
-                  name="phone" 
-                  type="tel" 
-                  value={formData.phone} 
-                  onChange={handleChange} 
-                />
-                <InputField 
-                  label="Brief About Your Requirements" 
-                  name="requirements" 
-                  isTextarea={true} 
-                  value={formData.requirements} 
-                  onChange={handleChange} 
-                />
-                
-                <div className="mt-8 flex justify-end">
-                    <CTAButton primary={true} type="submit">
-                        Submit & Request a Call Back
-                    </CTAButton>
-                </div>
-            </form>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">Share Your Details</h2>
+          <form
+            name="contact"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </p>
+            <InputField
+              label="Full Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Work Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Phone Number"
+              name="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Brief About Your Requirements"
+              name="requirements"
+              isTextarea={true}
+              value={formData.requirements}
+              onChange={handleChange}
+            />
+
+            <div className="mt-8 flex justify-end">
+              <CTAButton primary={true} type="submit">
+                Submit & Request a Call Back
+              </CTAButton>
+            </div>
+          </form>
         </div>
 
         {/* Contact Information & Trust Block */}
         <div className="flex flex-col space-y-8">
-            <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-xl border-l-4 border-accent flex flex-col h-full">
-                <h3 className="text-3xl font-bold text-gray-900 mb-10">
-                    Get in Touch
-                </h3>
-                
-                <div className="space-y-10">
-                    {/* Phone */}
-                    <div className="flex items-start space-x-5 group cursor-pointer">
-                        <div className="p-4 bg-accent/10 rounded-2xl group-hover:bg-accent/20 transition duration-300 border border-accent/20">
-                            <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Phone</p>
-                            <a href="tel:+918884944408" className="text-2xl font-bold text-gray-900 hover:text-accent transition duration-300 font-mono">
-                                +91 8884944408
-                            </a>
-                        </div>
-                    </div>
+          <div className="p-6 md:p-8 lg:p-10 glass rounded-3xl shadow-xl border-l-4 border-accent flex flex-col h-full">
+            <h3 className="text-3xl font-bold text-gray-900 mb-10">
+              Get in Touch
+            </h3>
 
-                    {/* Email */}
-                    <div className="flex items-start space-x-5 group cursor-pointer">
-                        <div className="p-4 bg-accent/10 rounded-2xl group-hover:bg-accent/20 transition duration-300 border border-accent/20">
-                            <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Email</p>
-                            <a href="mailto:abnexatechnologies@gmail.com" className="text-xl sm:text-2xl font-bold text-gray-900 hover:text-accent transition duration-300 break-all">
-                                abnexatechnologies@gmail.com
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div className="border-t border-gray-200 pt-8">
-                        <p className="text-gray-500 italic">
-                            "We reply to all business inquiries within 24 hours."
-                        </p>
-                    </div>
+            <div className="space-y-10">
+              {/* Phone */}
+              <div className="flex items-start space-x-5 group cursor-pointer">
+                <div className="p-4 bg-accent/10 rounded-2xl group-hover:bg-accent/20 transition duration-300 border border-accent/20">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Phone</p>
+                  <a href="tel:+918884944408" className="text-2xl font-bold text-gray-900 hover:text-accent transition duration-300 font-mono">
+                    +91 8884944408
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start space-x-5 group cursor-pointer">
+                <div className="p-4 bg-accent/10 rounded-2xl group-hover:bg-accent/20 transition duration-300 border border-accent/20">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Email</p>
+                  <a href="mailto:abnexatechnologies@gmail.com" className="text-xl sm:text-2xl font-bold text-gray-900 hover:text-accent transition duration-300 break-all">
+                    abnexatechnologies@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-200 pt-8">
+                <p className="text-gray-500 italic">
+                  "We reply to all business inquiries within 24 hours."
+                </p>
+              </div>
             </div>
+          </div>
         </div>
 
       </div>
