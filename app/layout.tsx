@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
-      <body className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans antialiased">
+      <body className="min-h-screen bg-slate-50 dark:bg-gray-950 text-slate-900 dark:text-gray-100 flex flex-col font-sans antialiased">
         <Navbar />
         <main className="flex-grow pt-16">
           {children}
@@ -83,8 +83,8 @@ export default function RootLayout({
         />
 
         {/* Footer Placeholder */}
-        <footer className="bg-white border-t border-gray-100 py-12 mt-auto">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <footer className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-900 py-12 mt-auto">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
             <div className="mb-4 md:mb-0">
               © {new Date().getFullYear()} Abnexa Technologies. All rights reserved.
             </div>

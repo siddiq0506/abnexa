@@ -24,19 +24,20 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
+    { name: 'Resources', href: '/resources' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-white ${scrolled ? 'shadow-md py-2' : 'py-3'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-white border-b border-transparent ${scrolled ? 'shadow-md py-2 border-gray-100' : 'py-3'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
-          <div className="flex-1 flex items-center justify-start">
+          <div className="flex-shrink-0 flex items-center justify-start">
             <Link href="/" className="flex items-center transition-transform hover:scale-105">
               <div className="relative w-56 h-14 sm:w-72 sm:h-20">
                 <Image
@@ -45,14 +46,14 @@ const Navbar = () => {
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
                   priority
-                  className="scale-[0.75] origin-left"
+                  className="origin-left"
                 />
               </div>
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex flex-1 space-x-8 items-center justify-end">
+          <div className="hidden md:flex flex-1 space-x-6 items-center justify-end">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -70,7 +71,7 @@ const Navbar = () => {
             })}
             <Link
               href="/book-demo"
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center"
+              className="bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center whitespace-nowrap"
             >
               Book Demo
             </Link>
