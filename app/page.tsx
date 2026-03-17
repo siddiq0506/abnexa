@@ -1,195 +1,450 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Abnexa Technologies | Premium Construction ERP & ConstructOS Platform",
-  description: "Abnexa Technologies builds scalable ERP software for contractors and construction companies. Track costs, manage projects, prevent margin leakage, and scale with intelligent ERP solutions.",
+  title: "Abnexa Technologies | Custom Software Products and AI Solutions",
+  description: "We build intelligent software products, AI powered business systems, and scalable digital platforms for businesses worldwide. Specialising in MVP development, AI agents, and AI automation.",
 };
+
+function IconCode() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  );
+}
+function IconRocket() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.82m2.56-5.84a14.927 14.927 0 00-2.58 5.841" />
+    </svg>
+  );
+}
+function IconBrain() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>
+  );
+}
+function IconLightning() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+  );
+}
+function IconChart() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>
+  );
+}
+function IconLayers() {
+  return (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2l10 6.5-10 6.5L2 8.5 12 2zM2 15.5l10 6.5 10-6.5M2 11.5l10 6.5 10-6.5" />
+    </svg>
+  );
+}
+
+const services = [
+  {
+    icon: <IconCode />,
+    title: 'Custom Software Products',
+    description: 'We design and build bespoke software tailored precisely to your business needs. Robust, scalable, and built to last.',
+    color: 'indigo',
+  },
+  {
+    icon: <IconRocket />,
+    title: 'MVP Development',
+    description: 'Launch your product in weeks, not months. We build lean, functional MVPs that validate your idea and attract real users fast.',
+    color: 'violet',
+  },
+  {
+    icon: <IconBrain />,
+    title: 'AI Agents',
+    description: 'Intelligent autonomous agents that handle complex workflows, decision making, and operations across your business systems.',
+    color: 'purple',
+  },
+  {
+    icon: <IconLightning />,
+    title: 'AI Automation',
+    description: 'Replace repetitive manual processes with intelligent automation. Save time, reduce errors, and scale operations effortlessly.',
+    color: 'indigo',
+  },
+  {
+    icon: <IconChart />,
+    title: 'AI Business Solutions',
+    description: 'End to end AI systems designed to deliver measurable outcomes. From intelligent analytics to predictive decision engines.',
+    color: 'violet',
+  },
+  {
+    icon: <IconLayers />,
+    title: 'Platform Development',
+    description: 'Scalable digital platforms built for growth. From SaaS products to enterprise grade platforms that serve thousands of users.',
+    color: 'purple',
+  },
+];
+
+const colorMap: Record<string, { bg: string; text: string }> = {
+  indigo: { bg: 'bg-indigo-50', text: 'text-indigo-600' },
+  violet: { bg: 'bg-violet-50', text: 'text-violet-600' },
+  purple: { bg: 'bg-purple-50', text: 'text-purple-600' },
+};
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Discovery',
+    description: 'We start by deeply understanding your business, users, and goals. No assumptions, only precise clarity on what to build and why.',
+  },
+  {
+    number: '02',
+    title: 'Design',
+    description: 'We architect the solution with a focus on user experience, technical scalability, and future growth. Every decision is intentional.',
+  },
+  {
+    number: '03',
+    title: 'Development',
+    description: 'We build with precision using modern technology stacks. AI accelerators allow us to move fast without compromising quality.',
+  },
+  {
+    number: '04',
+    title: 'Deployment',
+    description: 'We launch, monitor, and iterate. Your product goes from code to real users with full support and performance oversight.',
+  },
+];
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col animate-fade-in-up">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white dark:bg-gray-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-white dark:from-blue-900/20 dark:via-gray-950 dark:to-gray-950 opacity-70"></div>
-          {/* subtle moving orb effect */}
-          <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
-          <div className="absolute bottom-[20%] left-[10%] w-[600px] h-[600px] bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div className="flex flex-col bg-white">
+
+      {/* ─── HERO ─────────────────────────────────────── */}
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-white">
+        {/* Subtle background gradient */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/60 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-100/40 rounded-full blur-[100px]" />
+          <div
+            className="absolute inset-0 opacity-[0.025]"
+            style={{
+              backgroundImage: `linear-gradient(rgba(99,102,241,1) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,1) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px',
+            }}
+          />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-24">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm shadow-sm">
-            <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-ping"></span>
-            Abnexa Technologies
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-28">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-medium mb-10">
+            <span className="flex h-2 w-2 rounded-full bg-indigo-500" />
+            Global Software and AI Solutions
           </div>
 
-          <h1 className="text-[clamp(2.5rem,5vw,5rem)] font-extrabold tracking-tight text-gray-900 dark:text-white mb-8 leading-[1.1]">
-            ConstructOS: The Advanced <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent drop-shadow-sm">Construction ERP</span>
+          {/* H1 */}
+          <h1 className="text-[clamp(2.6rem,5.5vw,4.75rem)] font-heading font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.08]">
+            We Build Intelligent Software
+            <br className="hidden md:block" />
+            Products and{' '}
+            <span className="gradient-text">AI Systems</span>{' '}
+            for
+            <br className="hidden md:block" />
+            Modern Businesses
           </h1>
 
-          <p className="text-[clamp(1.125rem,2vw,1.25rem)] text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Construction today cannot rely on spreadsheets and delayed reporting. ConstructOS is an intelligent ERP software built specifically for contractors to eliminate margin leakage, control project costs, and scale operations with real-time financial visibility.
+          {/* Subtext */}
+          <p className="text-[clamp(1.05rem,1.8vw,1.275rem)] text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            From MVP development to advanced AI automation, Abnexa Technologies helps companies build scalable, high performance digital products and intelligent business systems.
           </p>
 
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link
-              href="/products"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-[0_8px_30px_rgb(37,99,235,0.25)] hover:shadow-[0_12px_40px_rgb(37,99,235,0.4)] transition-all duration-300 hover:-translate-y-1 active:scale-95 flex items-center justify-center group"
+              href="/contact"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-[15px] shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group"
             >
-              Explore ConstructOS
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              Start Your Project
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
             <Link
-              href="/book-demo"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm hover:shadow-md transition-all duration-300 active:scale-95 text-center"
+              href="/services"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-semibold text-[15px] border border-slate-200 hover:border-slate-300 transition-all duration-200 active:scale-95 text-center"
             >
-              Schedule a Demo
+              Explore Services
             </Link>
           </div>
+
+          <p className="mt-12 text-sm text-slate-400">
+            Trusted by businesses across industries worldwide
+          </p>
         </div>
       </section>
 
-      {/* The Construction Problem Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900 relative border-t border-gray-200/50 dark:border-gray-800">
+      {/* ─── SERVICES ─────────────────────────────────── */}
+      <section className="py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-              The Silent <span className="text-red-600 dark:text-red-500">Margin Leakage</span> Problem
+          <div className="max-w-2xl mx-auto text-center mb-20">
+            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">What We Build</p>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+              Technology Services Built for the Modern Business
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Most contracting companies silently lose 3% to 5% of their project margin. Why? Because generic management tools fail to connect the chaotic reality of a construction site with backend financial accounting.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-950 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Untracked Site Expenses</h3>
-              <p className="text-gray-600 dark:text-gray-400">Petty cash, ad-hoc material purchases, and unverified daily expenses pile up without centralized procurement oversight, destroying estimated margins.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-950 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Labour Inflation</h3>
-              <p className="text-gray-600 dark:text-gray-400">Fake attendance, ghost workers, and manual wage calculations lead to thousands inevitably lost in manpower leakages every single month.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-950 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Poor BOQ Visibility</h3>
-              <p className="text-gray-600 dark:text-gray-400">When Billing of Quantities (BOQ) is disconnected from daily site execution, project managers accidentally over-execute without the ability to bill the client.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Showcase Section */}
-      <section className="py-24 bg-white dark:bg-gray-950 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-              Engineered for <span className="text-blue-600 dark:text-blue-400">Construction Excellence</span>
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              ConstructOS connects the field to the office, providing real-time analytics, automated BOQ parsing, and deeply integrated vendor management.
+            <p className="text-lg text-slate-500 leading-relaxed">
+              We combine deep technical expertise with strategic thinking to deliver software products and AI solutions that create real business outcomes.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Real-Time Financial Control',
-                desc: 'Live financial intelligence. Track BOQ vs executed, revenue vs planned value, and daily accumulated costs with automated variance alerts.',
-                icon: (
-                  <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                )
-              },
-              {
-                title: 'Integrated HRMS & Labour',
-                desc: 'Complete workforce discipline inside your ERP. GPS based attendance, camera verified site presence, and automatic labour cost calculations.',
-                icon: (
-                  <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                )
-              },
-              {
-                title: 'Material & Inventory Control',
-                desc: 'Material inward/outward tracking linked to site execution. Monitor consumption variance and real-time stock positions to instantly reduce wastage.',
-                icon: (
-                  <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                )
-              },
-            ].map((feature, i) => (
-              <div key={i} className="group bg-white dark:bg-gray-900/50 p-10 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(37,99,235,0.08)] dark:hover:shadow-[0_8px_30px_rgb(37,99,235,0.05)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 dark:bg-blue-900/20 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-900/40 flex items-center justify-center mb-8 border border-blue-100 dark:border-blue-800/50 group-hover:bg-blue-600/10 transition-colors">
-                  {feature.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {services.map((service, i) => {
+              const c = colorMap[service.color];
+              return (
+                <div
+                  key={i}
+                  className="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className={`inline-flex p-3 rounded-xl ${c.bg} ${c.text} mb-6`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-500 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">{feature.desc}</p>
-                <Link href="/products" className="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
-                  Discover capabilities
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 30 DAY MVP ───────────────────────────────── */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 p-[1px]">
+              <div className="bg-white rounded-3xl p-10 md:p-16 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-[80px] pointer-events-none" />
+
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white text-xs font-bold uppercase tracking-widest mb-8">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  30 Day MVP
+                </div>
+
+                <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+                  The fastest path from{' '}
+                  <span className="gradient-text">idea to product</span>
+                </h2>
+
+                <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-2xl">
+                  There is only one way to understand how well a product works and how it can improve. Put it in front of real users.
+                </p>
+                <p className="text-lg text-slate-500 leading-relaxed max-w-2xl">
+                  Abnexa Technologies uses AI accelerators to speed up development and deliver working MVPs quickly. This allows faster feedback, better decisions, and stronger products.
+                </p>
+
+                <div className="mt-10">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 group"
+                  >
+                    Build Your MVP
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+
+                <div className="mt-10 flex flex-wrap gap-3">
+                  {['AI Accelerated', 'Real User Feedback', 'Rapid Iteration', 'Production Quality'].map((chip) => (
+                    <span
+                      key={chip}
+                      className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHY ABNEXA ───────────────────────────────── */}
+      <section className="py-28 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[120px]" />
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-5">Why Abnexa</p>
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">
+                Technology expertise meets business clarity
+              </h2>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                We combine deep technology expertise with practical business understanding. Every product we build is designed to solve a real problem, not just demonstrate technical skill.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {[
+                { title: 'We Build Fast', desc: 'AI accelerated development pipelines mean you get to market sooner and stay ahead of the competition.', icon: '⚡' },
+                { title: 'We Build Scalable', desc: 'Every system is architected to handle growth from day one, so you never have to rebuild from scratch.', icon: '📈' },
+                { title: 'Real Outcomes', desc: 'We measure success by your business results, not just delivery milestones. Your growth is our metric.', icon: '🎯' },
+                { title: 'AI First Development', desc: 'We integrate AI at the core of development to accelerate delivery and build smarter systems.', icon: '🧠' },
+              ].map((pillar, i) => (
+                <div
+                  key={i}
+                  className="p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-indigo-400/30 transition-all duration-300"
+                >
+                  <div className="text-2xl mb-4">{pillar.icon}</div>
+                  <h3 className="font-heading text-lg font-bold text-white mb-2">{pillar.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{pillar.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PROCESS ──────────────────────────────────── */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-20">
+            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">How We Work</p>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+              From idea to deployment
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              A clear, proven process that takes your vision from concept to a live, working product.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, i) => (
+              <div key={i} className="relative">
+                {i < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-[calc(100%_-_24px)] w-[calc(100%_-_32px)] h-px bg-gradient-to-r from-indigo-200 to-transparent z-0" />
+                )}
+                <div className="relative z-10">
+                  <div className="text-5xl font-heading font-black text-slate-100 mb-4 leading-none select-none">
+                    {step.number}
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Generic ERP vs Construction ERP */}
-      <section className="py-24 bg-slate-50 dark:bg-gray-900/50 border-t border-gray-200/50 dark:border-gray-800">
+      {/* ─── ABOUT ────────────────────────────────────── */}
+      <section className="py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Why Choose ConstructOS Over Generic ERP Software?</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Standard enterprise resource planning software is built for manufacturing or retail. ConstructOS is an exclusive ERP built ground-up for the chaotic nuances of the construction industry.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-white dark:bg-gray-950 border-l-4 border-red-500 shadow-sm">
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Traditional Generic ERPs</h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm list-disc list-inside">
-                  <li>Cannot parse or understand complex BOQs natively.</li>
-                  <li>Treat construction sites like traditional inventory warehouses.</li>
-                  <li>Disconnected Daily Site Reports (DSR) and physical execution.</li>
-                  <li>Clunky interfaces that field engineers refuse to use daily.</li>
-                </ul>
-              </div>
-              <div className="p-6 rounded-2xl bg-white dark:bg-gray-950 border-l-4 border-blue-600 shadow-lg relative transform md:translate-x-4">
-                <div className="absolute -left-3 -top-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">ConstructOS</div>
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-2">Specialized Construction ERP</h4>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm list-disc list-inside">
-                  <li>AI-driven BOQ ingestion, mapping, and structure parsing out of the box.</li>
-                  <li>Materials are linked directly to execution progress algorithms.</li>
-                  <li>Mobile-first Daily Execution entry that automatically syncs with back-office billing.</li>
-                  <li>Simple, intuitive architecture driving 100% field adoption rates.</li>
-                </ul>
-              </div>
-            </div>
-            <div className="hidden md:block relative h-[500px] w-full bg-gray-200 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-700">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/90 to-indigo-900/80 flex flex-col items-center justify-center p-12 text-center z-10">
-                <svg className="w-16 h-16 text-blue-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                <h3 className="text-2xl font-bold text-white mb-4">The Standard in Contracting Operations</h3>
-                <p className="text-blue-100">Abnexa Technologies is committed to migrating the construction industry away from fragmented spreadsheets into complete, real-time financial control.</p>
-              </div>
-              {/* Abstract background for image block */}
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-5">About Abnexa</p>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight leading-tight">
+              A technology company built for the intelligent era
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed mb-6">
+              Abnexa Technologies is a modern technology company focused on building intelligent software systems and AI powered solutions for businesses globally.
+            </p>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              We work closely with founders, product teams, and enterprise leaders to design and deliver custom software products that drive real growth. Our approach is precise, collaborative, and always outcomes focused.
+            </p>
+            <div className="mt-12">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors group"
+              >
+                Learn more about us
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-600 dark:bg-blue-900"></div>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to deploy a true Construction ERP?</h2>
-          <p className="text-xl text-blue-100 mb-10">Stop relying on outdated spreadsheets and generic software. Join the forward-thinking organizations scaling with ConstructOS.</p>
-          <div className="flex justify-center gap-4">
-            <Link href="/book-demo" className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold hover:bg-gray-50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              Schedule a Live Demo
+      {/* ─── RESOURCES ────────────────────────────────── */}
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-slate-50 border border-slate-100">
+            <div>
+              <h2 className="font-heading text-xl md:text-2xl font-bold text-slate-900 mb-1">
+                Insights and Resources
+              </h2>
+              <p className="text-slate-500 text-sm">
+                Guides, insights, and thinking on software, AI, and technology strategy.
+              </p>
+            </div>
+            <Link
+              href="/resources"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-100 hover:border-slate-300 transition-all duration-200 group"
+            >
+              Browse Resources
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
+
+      {/* ─── FINAL CTA ────────────────────────────────── */}
+      <section className="py-32 relative overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-600/20 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-violet-600/10 rounded-full blur-[80px]" />
+        </div>
+
+        <div className="max-w-3xl mx-auto px-4 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-900/60 border border-indigo-700/50 text-indigo-300 text-sm font-medium mb-10">
+            Ready to build something great
+          </div>
+
+          <h2 className="font-heading text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+            Ready to build your next product or{' '}
+            <span className="gradient-text">AI system</span>
+          </h2>
+
+          <p className="text-xl text-slate-400 mb-12 leading-relaxed">
+            Start your journey with Abnexa Technologies. Tell us what you are building and we will help you build it right.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-9 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-lg shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1 active:scale-95 transition-all duration-200"
+            >
+              Start a Project
+            </Link>
+            <Link
+              href="/services"
+              className="px-9 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-lg border border-white/15 hover:border-white/25 transition-all duration-200 active:scale-95"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
