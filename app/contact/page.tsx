@@ -1,9 +1,6 @@
-import type { Metadata } from 'next';
+"use client";
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Abnexa Technologies',
-  description: 'Get in touch with the Abnexa Technologies team to schedule a demo of ConstructOS or inquire about custom ERP implementations.',
-};
+import ContactForm from '../../components/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -40,33 +37,7 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-gray-100 dark:border-gray-800 relative z-10">
-            <form action="/contact?success=true" className="space-y-6">
-
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
-                  <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white" placeholder="John" />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white" placeholder="Doe" />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Work Email</label>
-                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white" placeholder="john@company.com" />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">How can we help?</label>
-                <textarea id="message" name="message" required rows={4} className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none dark:text-white" placeholder="Tell us about your project..."></textarea>
-              </div>
-
-              <button type="submit" className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all shadow-md active:scale-[0.98]">
-                Submit Request
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
