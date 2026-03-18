@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Abnexa Technologies | Custom Software Products and AI Solutions",
-  description: "We build intelligent software products, AI powered business systems, and scalable digital platforms for businesses worldwide. Specialising in MVP development, AI agents, and AI automation.",
+  title: "Abnexa Technologies | Custom AI Solutions & 30 Day MVP Development",
+  description: "Abnexa Technologies builds intelligent AI agents, autonomous business workflows, and production ready software products. Launch your idea in 30 days with our AI accelerated MVP playbook.",
 };
 
 function IconCode() {
@@ -58,7 +58,7 @@ const services = [
   },
   {
     icon: <IconRocket />,
-    title: 'MVP Development',
+    title: '30 Day MVP Development',
     description: 'Launch your product in weeks, not months. We build lean, functional MVPs that validate your idea and attract real users fast.',
     color: 'violet',
   },
@@ -146,18 +146,16 @@ export default function HomePage() {
 
           {/* H1 */}
           <h1 className="text-[clamp(2.6rem,5.5vw,4.75rem)] font-heading font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.08]">
-            We Build Intelligent Software
+            Build Your <span className="gradient-text">MVP in 30 Days</span>
             <br className="hidden md:block" />
-            Products and{' '}
-            <span className="gradient-text">AI Systems</span>{' '}
-            for
+            AI Automation and
             <br className="hidden md:block" />
-            Modern Businesses
+            Custom Software Solutions
           </h1>
 
           {/* Subtext */}
           <p className="text-[clamp(1.05rem,1.8vw,1.275rem)] text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            From MVP development to advanced AI automation, Abnexa Technologies helps companies build scalable, high performance digital products and intelligent business systems.
+            We build high performance digital products and intelligent business systems. From rapid 30 day MVP development to AI automation and autonomous agents that scale your operations.
           </p>
 
           {/* CTAs */}
@@ -182,6 +180,32 @@ export default function HomePage() {
           <p className="mt-12 text-sm text-slate-400">
             Trusted by businesses across industries worldwide
           </p>
+        </div>
+      </section>
+
+      {/* ─── MVP HIGHLIGHT ────────────────────────────── */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-indigo-600 rounded-[2rem] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+              <div className="absolute -top-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl" />
+              <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white rounded-full blur-3xl" />
+            </div>
+            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-heading font-black mb-6 leading-tight uppercase tracking-tight">
+              Build your MVP in 30 days
+            </h2>
+            <p className="text-xl md:text-2xl text-indigo-100 max-w-3xl mx-auto leading-relaxed font-medium mb-8">
+              Stop waiting months to launch. We take your idea from concept to a production ready product in exactly four weeks.
+            </p>
+            <div className="flex justify-center">
+              <Link
+                href="/contact"
+                className="px-10 py-4 bg-white text-indigo-600 font-bold text-lg rounded-xl hover:bg-indigo-50 transition-all shadow-lg active:scale-95"
+              >
+                Start Your 30 Day Countdown
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

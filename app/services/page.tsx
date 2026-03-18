@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Services | Custom Software Development, AI Agents and AI Automation",
-  description: "Abnexa Technologies offers custom software development, MVP development, AI agents, AI automation, AI business solutions, and platform development for businesses globally.",
+  title: "Services | AI Agents, Autonomous Workflows & MVP Development",
+  description: "Explore our AI first services: from autonomous AI agents and intelligent automation to rapid 30 Day MVP development and scalable platform engineering.",
 };
 
 const services = [
@@ -13,9 +13,9 @@ const services = [
     tags: ['Web Applications', 'Mobile Apps', 'Enterprise Software', 'API Development'],
   },
   {
-    title: 'MVP Development',
-    description: 'Get your product in front of real users in weeks. We leverage AI accelerators to build lean, functional MVPs that validate your concept, gather real feedback, and attract early adopters and investors.',
-    tags: ['Rapid Prototyping', 'User Validation', 'AI Accelerated', 'Go to Market'],
+    title: '30 Day MVP Development',
+    description: 'Get your product in front of real users in weeks. We build lean, functional MVPs that validate your concept, gather real feedback, and attract early adopters and investors.',
+    tags: ['Rapid Prototyping', 'User Validation', 'Fast Launch', 'Go to Market'],
   },
   {
     title: 'AI Agents',
