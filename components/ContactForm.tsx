@@ -6,8 +6,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     buildIdea: "",
-    budget: "",
     message: ""
   });
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSuccess("Your request has been submitted. We review every request carefully. Only serious inquiries will be responded to.");
-        setFormData({ name: "", email: "", buildIdea: "", budget: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", buildIdea: "", message: "" });
         setCaptchaAnswer("");
       } else {
         setError(data.message || "Something went wrong.");
@@ -116,21 +116,17 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Budget Required</label>
-        <select
-          title="Budget"
-          name="budget"
-          value={formData.budget}
+        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Phone Number</label>
+        <input
+          title="Phone"
+          type="tel"
+          name="phone"
+          value={formData.phone}
           onChange={handleChange}
           required
+          placeholder="e.g. +91 9876543210"
           className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
-        >
-          <option value="" disabled>Select your budget range</option>
-          <option value="Under ₹10k">Under ₹10k (Not recommended for custom software)</option>
-          <option value="₹10k to ₹25k">₹10k to ₹25k</option>
-          <option value="₹25k to ₹50k">₹25k to ₹50k</option>
-          <option value="₹50k+">₹50k+</option>
-        </select>
+        />
       </div>
 
       <div>
