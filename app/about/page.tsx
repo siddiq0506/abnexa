@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <p className="text-slate-950 font-black text-3xl uppercase tracking-widest">Abubakr Siddiq</p>
                 <div className="flex items-center gap-4 mt-4">
                     <span className="w-12 h-1 bg-indigo-600"></span>
-                    <p className="text-slate-500 font-black uppercase tracking-widest text-xs">Architect & Founder</p>
+                    <p className="text-slate-500 font-black uppercase tracking-widest text-xs">Founder</p>
                 </div>
             </div>
           </div>
