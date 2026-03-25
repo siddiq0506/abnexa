@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -14,8 +14,15 @@ export default function ContactForm() {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [captchaAnswer, setCaptchaAnswer] = useState("");
-  const [captchaNum1] = useState(Math.floor(Math.random() * 10) + 1);
-  const [captchaNum2] = useState(Math.floor(Math.random() * 10) + 1);
+  const [captchaNum1, setCaptchaNum1] = useState(0);
+  const [captchaNum2, setCaptchaNum2] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setCaptchaNum1(Math.floor(Math.random() * 10) + 1);
+    setCaptchaNum2(Math.floor(Math.random() * 10) + 1);
+    setIsMounted(true);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -147,18 +154,20 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Security Question: What is {captchaNum1} + {captchaNum2}?</label>
-        <input
-          title="Security Question Answer"
-          type="number"
-          name="captchaAnswer"
-          value={captchaAnswer}
-          onChange={(e) => setCaptchaAnswer(e.target.value)}
-          required
-          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors max-w-[200px]"
-        />
-      </div>
+      {isMounted && (
+        <div>
+          <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Security Question: What is {captchaNum1} + {captchaNum2}?</label>
+          <input
+            title="Security Question Answer"
+            type="number"
+            name="captchaAnswer"
+            value={captchaAnswer}
+            onChange={(e) => setCaptchaAnswer(e.target.value)}
+            required
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors max-w-[200px]"
+          />
+        </div>
+      )}
 
       <button
         type="submit"
