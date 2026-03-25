@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About | Abnexa Technologies',
-  description: 'Learn how Abnexa Technologies is redefining software development through intelligent execution and absolute business clarity.',
+  title: "About | Abnexa Technologies",
+  description: "Learn about Abnexa Technologies' mission to build high quality software faster using an efficient human and AI execution model.",
+  alternates: { canonical: 'https://abnexatechnologies.in/about' }
 };
 
 export default function AboutPage() {

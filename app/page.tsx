@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "Abnexa Technologies | 14 Day MVP & AI Growth Systems",
-  description: "Abnexa Technologies builds high quality products faster and more efficiently. Launch your MVP in 14 days and scale with our AI Growth Systems.",
+  title: "Abnexa Technologies | MVP Development in 14 Days & AI Growth Systems",
+  description: "Build your MVP in 14 days and scale your business with AI powered systems. Abnexa Technologies delivers high quality software for serious businesses.",
+  alternates: { canonical: 'https://abnexatechnologies.in' }
 };
 
 function HeroSection() {

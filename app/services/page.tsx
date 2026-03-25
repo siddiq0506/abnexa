@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Services | 14 Day MVP & AI Growth Systems",
-  description: "Abnexa Technologies provides high speed MVP development and AI growth systems for serious businesses. Launch in 14 days and scale with intelligent automation.",
+  title: "MVP Development & AI Solutions | Abnexa Technologies",
+  description: "Expert MVP development in 14 days and autonomous AI growth systems designed to scale your business revenue and output.",
+  alternates: { canonical: 'https://abnexatechnologies.in/services' }
 };
 
 const services = [

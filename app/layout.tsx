@@ -8,42 +8,40 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swa
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abnexatechnologies.com'),
+  metadataBase: new URL('https://abnexatechnologies.in'),
   title: {
-    default: "Abnexa Technologies | Custom Software Development and AI Solutions",
+    default: "Abnexa Technologies | MVP Development and AI Solutions",
     template: "%s | Abnexa Technologies"
   },
-  description: "Abnexa Technologies builds custom software products, AI powered systems, and scalable digital platforms for businesses worldwide. MVP development, AI agents, AI automation, and technology strategy.",
+  description: "Build your MVP in 14 days and scale your business with AI powered systems and automation. Abnexa Technologies delivers high quality software for serious businesses.",
   keywords: [
-    "Custom Software Development",
-    "MVP Development",
+    "MVP development company",
+    "build MVP in 14 days",
+    "AI automation for business",
+    "AI solutions company",
+    "custom software MVP",
+    "Rapid Prototyping",
     "AI Agents",
-    "AI Automation",
-    "AI Business Solutions",
-    "Custom Software Products",
-    "Software Development Company",
-    "AI Powered Solutions",
-    "Platform Development",
-    "Technology Strategy",
+    "AI Growth Systems",
     "Abnexa Technologies"
   ],
   authors: [{ name: "Abnexa Technologies" }],
   openGraph: {
-    title: 'Abnexa Technologies | Custom Software and AI Solutions',
-    description: 'We build intelligent software products and AI powered systems for modern businesses. From MVP development to advanced AI automation.',
+    title: 'Abnexa Technologies | MVP Development and AI Solutions',
+    description: 'Build your MVP in 14 days and automate your business with AI systems. High quality software products for modern founders.',
     siteName: 'Abnexa Technologies',
-    url: 'https://abnexatechnologies.com',
+    url: 'https://abnexatechnologies.in',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Abnexa Technologies' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abnexa Technologies | Custom Software and AI Solutions',
-    description: 'Building intelligent software products, AI agents, and scalable platforms for businesses globally.',
+    title: 'Abnexa Technologies | MVP Development and AI Solutions',
+    description: 'Build your MVP in 14 days and automate your business with AI systems.',
     images: ['/og-image.png'],
   },
   icons: { icon: '/favicon.png' },
-  alternates: { canonical: 'https://abnexatechnologies.com' }
+  alternates: { canonical: 'https://abnexatechnologies.in' }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -60,15 +58,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "SoftwareCompany",
               "name": "Abnexa Technologies",
-              "url": "https://abnexatechnologies.com",
-              "logo": "https://abnexatechnologies.com/logo.png",
-              "description": "Abnexa Technologies builds custom software products, AI powered systems, and scalable digital platforms for businesses worldwide.",
+              "url": "https://abnexatechnologies.in",
+              "logo": "https://abnexatechnologies.in/logo.png",
+              "description": "Abnexa Technologies is an MVP development and AI solutions company helping businesses build products and automate growth in record time.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              },
               "offers": {
                 "@type": "Service",
-                "name": "Custom Software Development and AI Solutions",
-                "description": "MVP Development, AI Agents, AI Automation, AI Business Solutions, Platform Development"
+                "name": "MVP Development and AI Solutions",
+                "description": "14 Day MVP Development, AI Agents, AI Automation, AI Growth Systems"
               }
             }),
           }}

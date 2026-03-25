@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "AI & Software Engineering Insights | Abnexa Authority Hub",
-    description: "Expert guides and strategy playbooks for building 14 Day MVPs and AI Growth Systems. High authority insights for modern business founders.",
+    title: "Strategic Intelligence | Abnexa Technologies",
+    description: "Deep dives and strategy playbooks for building 14 Day MVPs and AI Growth Systems. High authority insights for modern business founders.",
+    alternates: { canonical: 'https://abnexatechnologies.in/resources' }
 };
 
 export default function ResourcesPage() {
