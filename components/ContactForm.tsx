@@ -126,10 +126,10 @@ export default function ContactForm() {
           className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
         >
           <option value="" disabled>Select your budget range</option>
-          <option value="Under $10k">Under $10k (Not recommended for custom software)</option>
-          <option value="$10k to $25k">$10k to $25k</option>
-          <option value="$25k to $50k">$25k to $50k</option>
-          <option value="$50k+">$50k+</option>
+          <option value="Under ₹10k">Under ₹10k (Not recommended for custom software)</option>
+          <option value="₹10k to ₹25k">₹10k to ₹25k</option>
+          <option value="₹25k to ₹50k">₹25k to ₹50k</option>
+          <option value="₹50k+">₹50k+</option>
         </select>
       </div>
 

@@ -40,7 +40,7 @@ export default function AboutPage() {
                 src="/IMG_6714.jpg"
                 alt="Founder Abubakr Siddiq"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className="object-cover hover:grayscale-0 transition-all duration-1000"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
