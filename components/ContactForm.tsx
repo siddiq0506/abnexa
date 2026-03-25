@@ -2,28 +2,22 @@
 
 import React, { useState, FormEvent } from "react";
 
-interface FormData {
-  name: string;
-  email: string;
-  phone?: string;
-  company?: string;
-  message: string;
-  pageSource?: string;
-}
-
-const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    company: "",
-    message: "",
+    buildIdea: "",
+    budget: "",
+    message: ""
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+  const [captchaNum1] = useState(Math.floor(Math.random() * 10) + 1);
+  const [captchaNum2] = useState(Math.floor(Math.random() * 10) + 1);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -33,16 +27,14 @@ const ContactForm: React.FC = () => {
     setSuccess(null);
     setError(null);
 
-    // Client-side validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setError("Please fill in all required fields (Name, Email, Message).");
+    if (formData.message.length < 30) {
+      setError("Please provide a more detailed message (minimum 30 characters).");
       setLoading(false);
       return;
     }
 
-    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if (!emailRegex.test(formData.email)) {
-      setError("Please enter a valid email address.");
+    if (parseInt(captchaAnswer) !== captchaNum1 + captchaNum2) {
+      setError("Incorrect security answer Please try again.");
       setLoading(false);
       return;
     }
@@ -55,20 +47,20 @@ const ContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           ...formData,
-          pageSource: window.location.href, // Captures the current page URL
+          pageSource: window.location.href,
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setSuccess("Thank you. Our team will contact you shortly.");
-        setFormData({ name: "", email: "", phone: "", company: "", message: "" }); // Clear form
+        setSuccess("Your request has been submitted. We review every request carefully. Only serious inquiries will be responded to.");
+        setFormData({ name: "", email: "", buildIdea: "", budget: "", message: "" });
+        setCaptchaAnswer("");
       } else {
-        setError(data.message || "Something went wrong. Please try again.");
+        setError(data.message || "Something went wrong.");
       }
     } catch (err) {
-      console.error("Form submission error:", err);
       setError("Network error. Please try again.");
     } finally {
       setLoading(false);
@@ -76,96 +68,120 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="bg-slate-950 p-6 text-white border-l-4 border-slate-500">
+        <p className="font-bold text-lg uppercase tracking-widest mb-2">Important Notice</p>
+        <p className="text-slate-300">We review every request carefully. Only serious inquiries will be responded to.</p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+          <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Name</label>
           <input
+            title="Name"
             type="text"
-            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white"
-            placeholder="John Doe"
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+          <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Work Email</label>
           <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
+            title="Email"
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white"
-            placeholder="+91 1234567890"
+            required
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Work Email</label>
+        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">What do you want to build?</label>
         <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
+          title="What to build"
+          type="text"
+          name="buildIdea"
+          value={formData.buildIdea}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white"
-          placeholder="john@company.com"
+          placeholder="e.g. A marketplace, an internal AI tool, an MVP..."
+          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Company</label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          value={formData.company}
+        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Budget Required</label>
+        <select
+          title="Budget"
+          name="budget"
+          value={formData.budget}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all dark:text-white"
-          placeholder="Acme Corp"
-        />
+          required
+          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors"
+        >
+          <option value="" disabled>Select your budget range</option>
+          <option value="Under $10k">Under $10k (Not recommended for custom software)</option>
+          <option value="$10k to $25k">$10k to $25k</option>
+          <option value="$25k to $50k">$25k to $50k</option>
+          <option value="$50k+">$50k+</option>
+        </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">How can we help?</label>
+        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Message (min 30 characters)</label>
         <textarea
-          id="message"
+          title="Message"
           name="message"
-          rows={4}
+          rows={6}
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none dark:text-white"
-          placeholder="Tell us about your project..."
+          minLength={30}
+          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors resize-none"
+          placeholder="Provide details about your project, goals, and timeline..."
         ></textarea>
+        <div className="text-right text-xs text-slate-500 mt-2 font-medium">
+          {formData.message.length} / 30 characters minimum
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-bold text-slate-950 mb-3 uppercase tracking-widest text-slate-500">Security Question: What is {captchaNum1} + {captchaNum2}?</label>
+        <input
+          title="Security Question Answer"
+          type="number"
+          name="captchaAnswer"
+          value={captchaAnswer}
+          onChange={(e) => setCaptchaAnswer(e.target.value)}
+          required
+          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-950 focus:ring-1 focus:ring-slate-950 outline-none transition-colors max-w-[200px]"
+        />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all shadow-md active:scale-[0.98] disabled:opacity-50"
+        className="w-full py-5 px-8 bg-slate-950 hover:bg-slate-800 text-white font-bold text-lg tracking-widest uppercase transition-colors disabled:opacity-50"
       >
-        {loading ? "Sending..." : "Submit Request"}
+        {loading ? "Submitting Request..." : "Submit Inquiry"}
       </button>
 
       {success && (
-        <div className="mt-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/50">
-          <p className="text-green-600 dark:text-green-400 text-center font-medium">{success}</p>
+        <div className="p-6 bg-green-50 border border-green-200 text-green-900 font-bold text-center">
+          {success}
         </div>
       )}
       {error && (
-        <div className="mt-4 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/50">
-          <p className="text-red-600 dark:text-red-400 text-center font-medium">{error}</p>
+        <div className="p-6 bg-red-50 border border-red-200 text-red-900 font-bold text-center">
+          {error}
         </div>
       )}
     </form>
   );
-};
-
-export default ContactForm;
+}

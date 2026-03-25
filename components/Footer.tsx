@@ -1,43 +1,52 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Custom Software', href: '/services' },
-    { name: 'MVP Development', href: '/services' },
-    { name: 'AI Agents', href: '/services' },
-    { name: 'AI Automation', href: '/services' },
-    { name: 'Platform Development', href: '/services' },
+    { name: '14 Day MVP Development', href: '/services' },
+    { name: 'AI Growth Systems', href: '/services' },
+    { name: 'Efficiency Consulting', href: '/services' },
+    { name: 'Modern Systems', href: '/services' },
   ];
 
   const company = [
-    { name: 'About', href: '/about' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Resources Hub', href: '/resources' },
+    { name: 'Inquire Now', href: '/contact' },
   ];
 
   return (
-    <footer className="bg-slate-950 text-slate-400 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
+    <footer className="bg-slate-950 text-slate-500 py-32 selection:bg-indigo-600 selection:text-white border-t border-white/5 relative overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/10 rounded-full blur-[100px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-32">
+          
+          {/* Brand Restoration */}
           <div className="md:col-span-1">
-            <div className="mb-4">
-              <span className="font-heading text-xl font-bold text-white tracking-tight">Abnexa Technologies</span>
-            </div>
-            <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
-              We build intelligent software products and AI powered systems for modern businesses globally.
+            <Link href="/" className="group inline-block mb-10">
+              <span className="font-heading text-4xl font-black italic tracking-tighter text-white hover:text-indigo-400 transition-colors duration-300 select-none">
+                ABN<span className="text-indigo-500 group-hover:text-white transition-colors duration-300">EXA</span>
+              </span>
+            </Link>
+            <p className="text-xl leading-relaxed font-light text-slate-400 max-w-sm italic opacity-80">
+                We use an efficient human and AI execution model to deliver high quality products faster and more cost effectively than traditional companies.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-12">Offerings</h3>
+            <ul className="space-y-8">
               {services.map((s) => (
                 <li key={s.name}>
-                  <Link href={s.href} className="text-sm hover:text-white transition-colors duration-200">
+                  <Link href={s.href} className="text-sm font-black uppercase tracking-widest text-slate-500 hover:text-indigo-400 transition-colors duration-300">
                     {s.name}
                   </Link>
                 </li>
@@ -47,11 +56,11 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-12">Organization</h3>
+            <ul className="space-y-8">
               {company.map((c) => (
                 <li key={c.name}>
-                  <Link href={c.href} className="text-sm hover:text-white transition-colors duration-200">
+                  <Link href={c.href} className="text-sm font-black uppercase tracking-widest text-slate-500 hover:text-white transition-colors duration-300">
                     {c.name}
                   </Link>
                 </li>
@@ -60,14 +69,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500">
-            &copy; {currentYear} Abnexa Technologies. All rights reserved.
-          </p>
-          <p className="text-xs text-slate-600">
-            Building intelligent software for the future.
-          </p>
+        {/* Bottom Bar */}
+        <div className="pt-24 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-12 font-black uppercase tracking-[0.2em] text-[10px]">
+          <div className="text-slate-600">
+            &copy; {currentYear} Abnexa Technologies
+          </div>
+          <div className="flex gap-12 text-slate-400">
+            <span className="hover:text-indigo-400 transition-colors cursor-default">Premium Execution</span>
+            <span className="hover:text-indigo-400 transition-colors cursor-default">Outcome Driven</span>
+            <span className="text-white border-b border-indigo-600 pb-1">Serious Inquiries Only</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -2,95 +2,99 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Services | AI Agents, Autonomous Workflows & MVP Development",
-  description: "Explore our AI first services: from autonomous AI agents and intelligent automation to rapid 30 Day MVP development and scalable platform engineering.",
+  title: "Services | 14 Day MVP & AI Growth Systems",
+  description: "Abnexa Technologies provides high speed MVP development and AI growth systems for serious businesses. Launch in 14 days and scale with intelligent automation.",
 };
 
 const services = [
   {
-    title: 'Custom Software Products',
-    description: 'We design and build bespoke software precisely tailored to your business. From internal tools to customer facing products, every solution is architected for performance, reliability, and scale.',
-    tags: ['Web Applications', 'Mobile Apps', 'Enterprise Software', 'API Development'],
+    title: 'MVP Development in 14 Days',
+    description: 'We eliminate the months of delay associated with traditional software projects. Our execution model combines expert engineering with intelligent systems to deliver a production ready product in exactly two weeks.',
+    tags: ['Rapid Launch', 'Scalable Architecture', 'User Validation', 'High Speed Execution'],
+    icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    )
   },
   {
-    title: '30 Day MVP Development',
-    description: 'Get your product in front of real users in weeks. We build lean, functional MVPs that validate your concept, gather real feedback, and attract early adopters and investors.',
-    tags: ['Rapid Prototyping', 'User Validation', 'Fast Launch', 'Go to Market'],
+    title: 'AI Growth Systems',
+    description: 'We build systems that drive revenue. From automated lead generation to intelligent sales follow ups and revenue optimization, our AI systems increase your output while reducing manual effort.',
+    tags: ['Revenue Automation', 'Lead Generation', 'Sales Intelligence', 'Growth Engineering'],
+    icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+    )
   },
   {
-    title: 'AI Agents',
-    description: 'We build autonomous AI agents that handle complex, multi step workflows across your business systems. From research agents to sales agents to operational agents, we design AI that works for you around the clock.',
-    tags: ['Autonomous Workflows', 'LLM Integration', 'Multi Agent Systems', 'Business Automation'],
+    title: 'Modern Execution Model',
+    description: 'A smarter way to build software. We use a highly efficient model combining human expertise with autonomous systems to eliminate inefficiencies and deliver better results at a lower cost.',
+    tags: ['Human AI Synergy', 'Waste Elimination', 'Cost Efficiency', 'Peak Performance'],
+    icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2l10 6.5-10 6.5L2 8.5 12 2zM2 15.5l10 6.5 10-6.5M2 11.5l10 6.5 10-6.5" /></svg>
+    )
   },
   {
-    title: 'AI Automation',
-    description: 'Transform repetitive manual processes into intelligent, automated workflows. We identify your highest value automation opportunities and build systems that free your team to focus on work that matters.',
-    tags: ['Process Automation', 'Workflow Intelligence', 'Data Pipelines', 'Integration'],
-  },
-  {
-    title: 'AI Business Solutions',
-    description: 'End to end AI systems designed to deliver measurable business outcomes. From predictive analytics to intelligent recommendation engines, we build AI that integrates into your operations and drives results.',
-    tags: ['Predictive Analytics', 'AI Strategy', 'Custom AI Models', 'Business Intelligence'],
-  },
-  {
-    title: 'Platform Development',
-    description: 'Scalable digital platforms built for growth and reliability. Whether you are building a SaaS product, a marketplace, or an enterprise platform, we architect systems that serve thousands of users with confidence.',
-    tags: ['SaaS Platforms', 'Marketplace Development', 'Cloud Architecture', 'Scalable Infrastructure'],
-  },
-  {
-    title: 'Technology Strategy and Consulting',
-    description: 'Not sure what to build or how to build it? We work with founders and leadership teams to define technology roadmaps, make the right architectural decisions, and build teams that can execute.',
-    tags: ['Technology Roadmap', 'Architecture Review', 'Team Building', 'Product Strategy'],
+    title: 'Intelligent Workflows',
+    description: 'Replace fragmented manual processes with cohesive intelligent systems. We audit your operations and implement workflows that handle complex decision making and execution without human oversight.',
+    tags: ['Process Intelligence', 'System Integration', 'Decision Support', 'Operational Scale'],
+    icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+    )
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#090914]">
+    <div className="min-h-screen bg-slate-950 selection:bg-indigo-600 selection:text-white">
 
       {/* Hero */}
-      <section className="pt-28 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[400px] bg-indigo-400/8 dark:bg-indigo-600/10 rounded-full blur-[100px]" />
+      <section className="pt-48 pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[120px] animate-pulse"></div>
+            <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] bg-violet-600/10 rounded-full blur-[100px] animate-subtle-float"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-5">Services</p>
-            <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-8 tracking-tight leading-tight">
-              What We Build
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <p className="text-xs font-black text-indigo-400 uppercase tracking-widest mb-10 animate-fade-in">Precision Services</p>
+            <h1 className="font-heading text-6xl md:text-8xl font-black text-white mb-12 tracking-tighter leading-[0.9] animate-fade-in-up">
+              Architecting <br />
+                <span className="gradient-text">Absolute Success</span>
             </h1>
-            <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed">
-              From custom software products to advanced AI systems, we build the technology that helps modern businesses operate, scale, and compete.
+            <p className="text-2xl text-slate-400 leading-relaxed font-light max-w-2xl opacity-80 animate-fade-in delay-200">
+              We replace billable hours with outcome focused execution. High quality products and intelligent systems delivered at the speed of thought.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services list */}
-      <section className="pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
+      {/* Services List */}
+      <section className="py-40 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid gap-6">
             {services.map((service, i) => (
               <div
                 key={i}
-                className="group p-8 md:p-10 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 hover:border-indigo-200 dark:hover:border-indigo-800/40 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/30 transition-all duration-300"
+                className="group p-12 md:p-16 bg-slate-50 border border-slate-100 hover:border-indigo-600 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-2xl relative overflow-hidden"
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold font-heading">
-                    {String(i + 1).padStart(2, '0')}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-600/5 group-hover:bg-indigo-600 transition-colors transform translate-x-12 -translate-y-12 rotate-45"></div>
+                
+                <div className="flex flex-col md:flex-row md:items-start gap-12 relative z-10">
+                  <div className="flex-shrink-0 p-6 bg-slate-950 text-white rounded-none shadow-xl transform group-hover:scale-110 transition-transform">
+                    {service.icon}
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-3">
-                      {service.title}
-                    </h2>
-                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-2xl">
+                    <div className="flex items-center gap-6 mb-8">
+                        <span className="text-slate-200 text-6xl font-black opacity-50">0{i + 1}</span>
+                        <h2 className="text-4xl font-black text-slate-950 tracking-tighter uppercase">
+                        {service.title}
+                        </h2>
+                    </div>
+                    <p className="text-xl text-slate-600 leading-relaxed mb-12 max-w-4xl font-light">
                       {service.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-4">
                       {service.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5"
+                          className="px-6 py-2 text-[10px] font-black uppercase tracking-widest bg-white text-slate-500 border border-slate-200 shadow-sm group-hover:border-indigo-200 group-hover:text-indigo-600 transition-colors"
                         >
                           {tag}
                         </span>
@@ -104,24 +108,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 border-t border-slate-100 dark:border-white/5">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-            Not sure which service fits your needs?
-          </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 mb-10">
-            Talk to our team. We will help you identify the right approach and get the right solution built.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 group"
-          >
-            Get in Touch
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
+      {/* Result Section */}
+      <section className="py-40 bg-slate-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute bottom-[-10%] left-[20%] w-[30%] h-[30%] bg-indigo-600/20 rounded-full blur-[100px]"></div>
+        </div>
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-tight italic">Outcome Driven Execution</h2>
+            <p className="text-2xl text-slate-400 leading-relaxed mb-16 font-light max-w-3xl mx-auto italic">
+                We work only with serious clients who value speed, quality, and results. We do not participate in bidding wars. We deliver value.
+            </p>
+            <Link
+                href="/contact"
+                className="inline-flex items-center gap-6 px-12 py-6 bg-white text-slate-950 font-black text-xl uppercase tracking-widest transition-all shadow-2xl hover:scale-105 active:scale-95"
+            >
+                Start Your Project
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </Link>
         </div>
       </section>
 
