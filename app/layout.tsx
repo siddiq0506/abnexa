@@ -40,7 +40,15 @@ export const metadata: Metadata = {
     description: 'Build your MVP in 14 days and automate your business with AI systems.',
     images: ['/og-image.png'],
   },
-  icons: { icon: '/favicon.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=1', sizes: 'any' },
+      { url: '/favicon-16x16.png?v=1', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png?v=1', type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico?v=1',
+    apple: '/apple-touch-icon.png?v=1',
+  },
   alternates: { canonical: 'https://abnexatechnologies.in' }
 };
 
