@@ -38,8 +38,8 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
             <div className="aspect-[4/5] bg-slate-900 overflow-hidden relative z-10 shadow-[0_0_80px_rgba(0,0,0,0.5)] transform group-hover:scale-[1.02] transition-transform duration-700">
               <Image
-                src="/IMG_6714.jpg"
-                alt="Founder Abubakr Siddiq"
+                src="/images/founder.jpg"
+                alt="Founder - Abubacker Siddique"
                 fill
                 className="object-cover hover:grayscale-0 transition-all duration-1000"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -47,12 +47,10 @@ export default function AboutPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
             </div>
-            <div className="absolute -bottom-10 -right-10 bg-white p-12 z-20 shadow-2xl hidden lg:block border border-slate-100">
-                <p className="text-slate-950 font-black text-3xl uppercase tracking-widest">Abubakr Siddiq</p>
-                <div className="flex items-center gap-4 mt-4">
-                    <span className="w-12 h-1 bg-indigo-600"></span>
-                    <p className="text-slate-500 font-black uppercase tracking-widest text-xs">Founder</p>
-                </div>
+            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-white p-8 md:p-12 z-20 shadow-2xl border border-slate-100">
+                <p className="text-slate-950 font-black text-xl md:text-3xl font-[family-name:var(--font-heading)]">
+                    <b>Founder - Abubacker Siddique</b>
+                </p>
             </div>
           </div>
           
